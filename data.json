@@ -1,14 +1,14 @@
 {
-   "day" : 1,
+   "day" : 2,
    "followers" : {
-      "instagram" : 1,
+      "instagram" : 2,
       "tiktok" : 1,
       "youtube" : 10
    },
-   "interim" : true,
+   "interim" : false,
    "likes" : {
-      "instagram" : 2,
-      "tiktok" : 2,
+      "instagram" : 8,
+      "tiktok" : 5,
       "youtube" : 18
    },
    "rent" : {
@@ -25,6 +25,12 @@
       {
          "date" : "21 Nov",
          "day" : 2,
+         "text" : "You voted for $900 and a new son. No free money, but neighbor Mrs. Rivera needed a babysitter: Joe played baseball with her son Leo and earned $40.",
+         "video" : "https://www.youtube.com/watch?v=1LzX9iBu5BU"
+      },
+      {
+         "date" : "22 Nov",
+         "day" : 3,
          "text" : "Drops at 7 PM CET with the result of your vote.",
          "upcoming" : true
       }
@@ -95,29 +101,65 @@
          "n" : 1,
          "platform" : "instagram",
          "t" : "2026-11-21T07:34:00+01:00"
+      },
+      {
+         "amt" : 0.75,
+         "kind" : "like",
+         "n" : 3,
+         "platform" : "tiktok",
+         "t" : "2026-11-21T21:11:00+01:00"
+      },
+      {
+         "amt" : 5,
+         "kind" : "follow",
+         "n" : 1,
+         "platform" : "instagram",
+         "rate" : 5,
+         "t" : "2026-11-21T21:11:00+01:00"
+      },
+      {
+         "amt" : 1.5,
+         "kind" : "like",
+         "n" : 6,
+         "platform" : "instagram",
+         "t" : "2026-11-21T21:11:00+01:00"
+      },
+      {
+         "amt" : 40,
+         "kind" : "earn",
+         "sub" : "Day 2 · 2 hours baseball · Mrs. Rivera",
+         "t" : "2026-11-21T19:00:00+01:00",
+         "title" : "Babysitting Leo"
+      },
+      {
+         "amt" : -12,
+         "kind" : "cost",
+         "sub" : "Day 2 · living costs",
+         "t" : "2026-11-21T19:00:00+01:00",
+         "title" : "Food"
       }
    ],
-   "updated" : "2026-11-21T18:08:00+01:00",
+   "updated" : "2026-11-21T21:11:00+01:00",
    "vote" : {
-      "closes" : "2026-11-21T12:00:00+01:00",
-      "day" : 1,
+      "closes" : "2026-11-22T12:00:00+01:00",
+      "day" : 2,
       "options" : [
          {
             "key" : "A",
-            "note" : "Steady money, but long shifts",
-            "title" : "Get a job at the burger place"
+            "note" : "$40 each = $120/week, but only 3 days",
+            "title" : "Babysit Leo 3 afternoons a week"
          },
          {
             "key" : "B",
-            "note" : "Quick cash, but no more job calls",
-            "title" : "Sell his old phone"
+            "note" : "$30 a shift = $120/week, night shifts",
+            "title" : "Take the burger job, 4 nights"
          },
          {
             "key" : "C",
-            "note" : "Free money, but at what cost?",
-            "title" : "Call his mom and beg"
+            "note" : "Up to $240/week, but if he falls asleep on the job, a dice roll decides which job he loses",
+            "title" : "Do both"
          }
       ],
-      "question" : "What does Joe do first?"
+      "question" : "What does Joe do?"
    }
 }
