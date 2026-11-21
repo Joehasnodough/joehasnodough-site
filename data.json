@@ -1,0 +1,123 @@
+{
+   "day" : 1,
+   "followers" : {
+      "instagram" : 1,
+      "tiktok" : 1,
+      "youtube" : 10
+   },
+   "interim" : true,
+   "likes" : {
+      "instagram" : 2,
+      "tiktok" : 2,
+      "youtube" : 18
+   },
+   "rent" : {
+      "amount" : 900,
+      "dueDay" : 30
+   },
+   "story" : [
+      {
+         "date" : "20 Nov",
+         "day" : 1,
+         "text" : "Joe has $0, an empty fridge and $900 rent due in 30 days. You get to decide how he survives.",
+         "video" : "https://www.youtube.com/watch?v=wvdVFkNSwFc"
+      },
+      {
+         "date" : "21 Nov",
+         "day" : 2,
+         "text" : "Drops at 7 PM CET with the result of your vote.",
+         "upcoming" : true
+      }
+   ],
+   "tx" : [
+      {
+         "amt" : 0,
+         "kind" : "open",
+         "sub" : "Day 1 · Joe starts with nothing",
+         "t" : "2026-11-20T19:00:00+01:00",
+         "title" : "Account opened"
+      },
+      {
+         "amt" : 55,
+         "kind" : "follow",
+         "n" : 11,
+         "platform" : "youtube",
+         "rate" : 5,
+         "t" : "2026-11-21T06:00:00+01:00"
+      },
+      {
+         "amt" : 4.5,
+         "kind" : "like",
+         "n" : 18,
+         "platform" : "youtube",
+         "t" : "2026-11-21T06:00:00+01:00"
+      },
+      {
+         "amt" : 5,
+         "kind" : "follow",
+         "n" : 1,
+         "platform" : "tiktok",
+         "rate" : 5,
+         "t" : "2026-11-21T06:00:00+01:00"
+      },
+      {
+         "amt" : 0.5,
+         "kind" : "like",
+         "n" : 2,
+         "platform" : "tiktok",
+         "t" : "2026-11-21T06:00:00+01:00"
+      },
+      {
+         "amt" : 0.75,
+         "kind" : "like",
+         "n" : 3,
+         "platform" : "instagram",
+         "t" : "2026-11-21T06:00:00+01:00"
+      },
+      {
+         "amt" : -5,
+         "kind" : "unfollow",
+         "n" : 1,
+         "platform" : "youtube",
+         "t" : "2026-11-21T07:25:00+01:00"
+      },
+      {
+         "amt" : 5,
+         "kind" : "follow",
+         "n" : 1,
+         "platform" : "instagram",
+         "rate" : 5,
+         "t" : "2026-11-21T07:34:00+01:00"
+      },
+      {
+         "amt" : -0.25,
+         "kind" : "unlike",
+         "n" : 1,
+         "platform" : "instagram",
+         "t" : "2026-11-21T07:34:00+01:00"
+      }
+   ],
+   "updated" : "2026-11-21T07:34:00+01:00",
+   "vote" : {
+      "closes" : "2026-11-21T12:00:00+01:00",
+      "day" : 1,
+      "options" : [
+         {
+            "key" : "A",
+            "note" : "Steady money, but long shifts",
+            "title" : "Get a job at the burger place"
+         },
+         {
+            "key" : "B",
+            "note" : "Quick cash, but no more job calls",
+            "title" : "Sell his old phone"
+         },
+         {
+            "key" : "C",
+            "note" : "Free money, but at what cost?",
+            "title" : "Call his mom and beg"
+         }
+      ],
+      "question" : "What does Joe do first?"
+   }
+}
