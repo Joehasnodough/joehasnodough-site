@@ -293,12 +293,12 @@
          "t" : "2026-11-22T23:29:00+01:00"
       }
    ],
-   "updated" : "2026-11-22T23:29:00+01:00",
+   "updated" : "2026-11-22T23:46:00+01:00",
    "vote" : {
       "closes" : "2026-11-23T12:00:00+01:00",
       "day" : 3,
       "leader" : {
-         "at" : "2026-11-22T23:29:00+01:00",
+         "at" : "2026-11-22T23:46:00+01:00",
          "likes" : 0,
          "platform" : "youtube",
          "text" : "RULES: follow = $5 · like = $0.25 · most-liked comment by 12:00 CET decides tomorrow (A, B, C or your own idea). Must be legal & possible. Live bank: joehasnodough.com"
