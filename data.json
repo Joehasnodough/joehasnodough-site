@@ -3,13 +3,13 @@
    "followers" : {
       "instagram" : 4,
       "tiktok" : 1,
-      "youtube" : 18
+      "youtube" : 20
    },
    "interim" : false,
    "likes" : {
       "instagram" : 40,
-      "tiktok" : 6,
-      "youtube" : 32
+      "tiktok" : 10,
+      "youtube" : 43
    },
    "rent" : {
       "amount" : 900,
@@ -269,12 +269,40 @@
          "sub" : "Day 3 · living costs",
          "t" : "2026-11-22T19:00:00+01:00",
          "title" : "Food"
+      },
+      {
+         "amt" : 10,
+         "kind" : "follow",
+         "n" : 2,
+         "platform" : "youtube",
+         "rate" : 5,
+         "t" : "2026-11-22T23:29:00+01:00"
+      },
+      {
+         "amt" : 2.75,
+         "kind" : "like",
+         "n" : 11,
+         "platform" : "youtube",
+         "t" : "2026-11-22T23:29:00+01:00"
+      },
+      {
+         "amt" : 1,
+         "kind" : "like",
+         "n" : 4,
+         "platform" : "tiktok",
+         "t" : "2026-11-22T23:29:00+01:00"
       }
    ],
-   "updated" : "2026-11-22T18:09:00+01:00",
+   "updated" : "2026-11-22T23:29:00+01:00",
    "vote" : {
       "closes" : "2026-11-23T12:00:00+01:00",
       "day" : 3,
+      "leader" : {
+         "at" : "2026-11-22T23:29:00+01:00",
+         "likes" : 0,
+         "platform" : "youtube",
+         "text" : "RULES: follow = $5 · like = $0.25 · most-liked comment by 12:00 CET decides tomorrow (A, B, C or your own idea). Must be legal & possible. Live bank: joehasnodough.com"
+      },
       "options" : [
          {
             "key" : "A",
