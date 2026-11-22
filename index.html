@@ -143,6 +143,48 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
 .count{background:#fff6dd;border-color:#f1d48a}.count .num{color:var(--gold-ink)}
 .dayc .d,.dayc a,.rule b{color:var(--gold-ink)}
 .dayc.next{background:transparent;border:1px dashed #cdd2de}.dayc.next p{color:var(--app-muted)}
+/* Stats (Umbau 22.11.): Grafiken statt Text */
+.st-rent{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:14px;align-items:center}
+.st-ring{width:100%;max-width:210px;display:block}
+.st-ring circle{fill:none;stroke-width:13}.st-ring .trk{stroke:var(--app-line)}
+.st-ring .val{stroke:url(#gold-g);stroke-linecap:round;stroke-dasharray:0 315;transition:stroke-dasharray 1.4s cubic-bezier(.2,.8,.2,1)}
+.st-ring text{text-anchor:middle;font-family:var(--text);fill:var(--app-ink)}.st-ring .big{font-size:24px;font-weight:700;letter-spacing:-.03em}.st-ring .sm{font-size:10px;fill:var(--app-muted);font-weight:500}
+.st-side{display:grid;gap:10px}.st-side div{background:var(--app-tile);border-radius:16px;padding:12px 14px}
+.st-side b{display:block;font:700 26px/1.05 var(--text);letter-spacing:-.03em}.st-side span{font-size:12px;color:var(--app-muted);font-weight:500}
+.st-cal{display:grid;grid-template-columns:repeat(30,minmax(0,1fr));gap:3px;margin-top:16px}
+.st-cal i{height:18px;border-radius:4px;background:var(--app-line)}.st-cal i.past{background:var(--app-ink)}.st-cal i.today{background:var(--gold)}.st-cal i.due{background:#fde7ea;outline:2px solid var(--minus);outline-offset:-2px}
+.st-need{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px;padding:12px 14px;border-radius:16px;background:#fff6dd;flex-wrap:wrap}
+.st-need-l span{display:block;font-size:12px;color:var(--app-muted);font-weight:500}.st-need-l b{font:700 24px/1.1 var(--text);color:var(--gold-ink);letter-spacing:-.03em}
+.st-pills{display:flex;align-items:center;gap:6px}.st-pills i{font-style:normal;font-size:12px;color:var(--app-muted)}
+.st-pill{display:inline-flex;align-items:center;gap:5px;background:#fff;border-radius:999px;padding:6px 10px 6px 8px}.st-pill b{font:700 15px/1 var(--text)}
+.st-pill svg,.st-kpis svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.st-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:14px}
+.st-kpis div{background:var(--app-tile);border-radius:16px;padding:12px;display:grid;gap:4px;justify-items:start}.st-kpis svg{color:var(--app-muted);width:20px;height:20px}
+.st-kpis b{font:700 24px/1 var(--text);letter-spacing:-.03em}.st-kpis .gold b{color:var(--gold-ink)}
+.st-race{display:grid;gap:8px}
+.st-lane{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--app-tile);border-radius:16px;padding:11px 12px}
+.st-lane .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;font:800 13px/1 var(--text);position:relative}
+.st-lane .rk{position:absolute;left:-5px;top:-5px;width:18px;height:18px;border-radius:50%;background:var(--app-ink);color:#fff;font:800 10px/18px var(--text);text-align:center;box-shadow:0 0 0 2px var(--app-tile)}
+.st-lane .rk.first{background:var(--gold);color:#1a1408}
+.st-track{height:12px;border-radius:6px;background:var(--app-line);overflow:hidden}.st-track i{display:block;height:100%;width:0;border-radius:6px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.st-meta{display:flex;gap:12px;margin-top:6px;font:600 12px/1 var(--text);color:var(--app-muted)}.st-meta span{display:inline-flex;align-items:center;gap:4px}
+.st-meta svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.st-lane .amt{font:700 16px/1 var(--text);color:var(--plus)}
+.st-chart{width:100%;height:auto;display:block;overflow:visible}
+.st-chart text{font-family:var(--text);font-size:11px;fill:var(--app-muted);font-weight:500}.st-chart .v{fill:#fff;font-weight:700;font-size:12px}.st-chart .v.last{fill:#1a1408}
+.st-road{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:4px 0 2px}
+.st-road-trk{position:absolute;left:12.5%;right:12.5%;top:25px;height:8px;border-radius:4px;background:var(--app-line);overflow:hidden}
+.st-road-trk i{display:block;height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--gold-deep),var(--gold));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.st-node{position:relative;display:grid;justify-items:center;gap:6px}
+.st-node .dot{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--app-line);font:700 15px/1 var(--text);color:var(--app-muted);letter-spacing:-.02em}
+.st-node small{font:600 11px/1 var(--text);color:var(--app-muted);letter-spacing:.04em}
+.st-node.done .dot{background:#fff6dd;border-color:var(--gold);color:var(--gold-ink)}
+.st-node.on .dot{background:var(--gold);border-color:var(--gold);color:#1a1408;box-shadow:0 0 0 5px rgba(255,201,74,.3)}
+.st-node.on small{color:var(--app-ink)}
+.st-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;align-items:end;height:96px}
+.st-steps div{border-radius:12px 12px 6px 6px;background:var(--app-tile);display:grid;align-content:end;justify-items:center;padding:8px 4px;font-size:11px;color:var(--app-muted);font-weight:600}
+.st-steps b{font:700 17px/1.1 var(--text);color:var(--app-ink)}.st-steps .on{background:var(--gold)}.st-steps .on b,.st-steps .on{color:#1a1408}
+@media (max-width:420px){.st-side b{font-size:22px}.st-cal{gap:2px}.st-cal i{height:16px}}
 /* Reiter-Leiste unten wie in einer App */
 .wrap{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);
@@ -188,18 +230,35 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
     <div class="bank-foot"><span id="updated">Updating…</span><span id="next"></span></div>
   </section>
 
-  <section class="panel" data-tab="stats" aria-labelledby="fol-h">
-    <div class="panel-head"><h2 id="fol-h">Followers right now</h2><span class="eyebrow">All 3 platforms</span></div>
-    <div class="plats" id="plats"></div>
-    <div class="total"><span>Total followers</span><span class="num" id="fol-total">–</span></div>
+  <section class="panel" data-tab="stats" aria-labelledby="rent-h">
+    <div class="panel-head"><h2 id="rent-h">Rent</h2><span class="eyebrow" id="rent-day">Day 1 of 30</span></div>
+    <div class="st-rent">
+      <svg class="st-ring" viewBox="0 0 120 120" role="img" aria-labelledby="ring-t"><title id="ring-t">Rent saved</title>
+        <defs><linearGradient id="gold-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd76e"/><stop offset="1" stop-color="#e0a21a"/></linearGradient></defs>
+        <circle cx="60" cy="60" r="50" class="trk"/><circle cx="60" cy="60" r="50" class="val" id="ring-val" transform="rotate(-90 60 60)"/>
+        <text x="60" y="60" class="big num" id="ring-saved">$0</text><text x="60" y="78" class="sm" id="ring-of">of $900</text></svg>
+      <div class="st-side">
+        <div><b class="num" id="rent-left">–</b><span>to go</span></div>
+        <div><b class="num" id="rent-days">–</b><span>days left</span></div>
+      </div>
+    </div>
+    <div class="st-cal" id="rent-cal" aria-hidden="true"></div>
+    <div class="st-need">
+      <div class="st-need-l"><span>Joe needs per day</span><b class="num" id="need-day">–</b></div>
+      <div class="st-pills"><span class="st-pill"><svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20a6.5 6.5 0 0 1 13 0M19 8v6M16 11h6"/></svg><b class="num" id="need-f">–</b></span><i>or</i><span class="st-pill"><svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><b class="num" id="need-l">–</b></span></div>
+    </div>
   </section>
 
-  <section class="panel" data-tab="stats" aria-labelledby="rent-h">
-    <div class="panel-head"><h2 id="rent-h">Rent: $900 in 30 days</h2><span class="eyebrow" id="rent-day">Day 1 of 30</span></div>
-    <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="900" aria-label="Rent saved" id="rent-meter"><i id="rent-bar"></i></div>
-    <div class="meter-legend"><span class="num" id="rent-saved">–</span><span class="num" id="rent-left">–</span></div>
-    <div class="tier" id="tiers" aria-label="Pay per follower by level"></div>
-    <p class="hint" id="tier-hint"></p>
+  <section class="panel" data-tab="stats" aria-labelledby="race-h">
+    <div class="panel-head"><h2 id="race-h">Who pays Joe</h2><span class="eyebrow">Platform race</span></div>
+    <div class="st-race" id="race"></div>
+  </section>
+
+  <section class="panel" data-tab="stats" aria-labelledby="curve-h">
+    <div class="panel-head"><h2 id="curve-h">Balance</h2><span class="eyebrow">End of each day</span></div>
+    <svg class="st-chart" id="curve" viewBox="0 0 320 150" role="img" aria-label="Balance at the end of each day"></svg>
+    <div class="panel-head" style="margin:18px 0 10px"><h2 style="font-size:16px">Pay per follower</h2><span class="eyebrow num" id="tier-prog">–</span></div>
+    <div class="st-road" id="tiers" role="img"></div>
   </section>
 
   <section class="panel" data-tab="vote" aria-labelledby="vote-h">
@@ -326,22 +385,55 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
     const up=new Date(D.updated);$('updated').textContent=`Updated ${up.toLocaleDateString('en-GB',{...tz,day:'numeric',month:'short'})}, ${timeOf(up)} CET`;
     $('next').textContent='Next update in about an hour';
 
-    // followers
-    const plats=$('plats');plats.innerHTML='';let fTot=0;
-    Object.keys(PLAT).forEach(k=>{const f=D.followers[k]||0,l=D.likes[k]||0;fTot+=f;
-      plats.append(el('div','plat',`<span class="p">${PLAT[k].name}</span><span class="f num">${f.toLocaleString('en-US')}</span><span class="l">${l.toLocaleString('en-US')} likes</span>`))});
-    $('fol-total').textContent=fTot.toLocaleString('en-US');
-
-    // rent + tiers
-    const rent=D.rent.amount,saved=Math.max(0,bal);
+    // stats (Umbau 22.11.)
+    let fTot=0,lTot=0;Object.keys(PLAT).forEach(k=>{fTot+=D.followers[k]||0;lTot+=D.likes[k]||0});
+    const rent=D.rent.amount,saved=Math.max(0,bal),left=Math.max(0,rent-saved),daysLeft=Math.max(1,D.rent.dueDay-D.day);
     $('rent-day').textContent=`Day ${D.day} of ${D.rent.dueDay}`;
-    $('rent-meter').setAttribute('aria-valuenow',saved.toFixed(2));
-    requestAnimationFrame(()=>{$('rent-bar').style.width=Math.min(100,saved/rent*100)+'%'});
-    $('rent-saved').textContent=fmt(saved)+' saved';$('rent-left').textContent=fmt(Math.max(0,rent-saved))+' to go';
-    const tiers=$('tiers');tiers.innerHTML='';let ti=0;while(ti+1<TIERS.length&&fTot>=TIERS[ti+1][0])ti++;
-    const lab=['0–99','100–999','1K–9,999','10K+'];
-    TIERS.forEach(([,r],i)=>tiers.append(el('div',i===ti?'on':'',`<b>$${r}</b>${lab[i]}`)));
-    $('tier-hint').textContent=TIERS[ti+1]?`${(TIERS[ti+1][0]-fTot).toLocaleString('en-US')} more followers until every new follow pays $${TIERS[ti+1][1]}.`:'Top level reached.';
+    $('ring-saved').textContent='$'+Math.floor(saved).toLocaleString('en-US');$('ring-of').textContent='of $'+rent.toLocaleString('en-US');
+    requestAnimationFrame(()=>{$('ring-val').style.strokeDasharray=`${Math.min(1,saved/rent)*314.16} 315`});
+    $('rent-left').textContent='$'+Math.ceil(left).toLocaleString('en-US');$('rent-days').textContent=daysLeft;
+    const cal=$('rent-cal');cal.innerHTML='';for(let i=1;i<=D.rent.dueDay;i++)cal.append(el('i',i<D.day?'past':i===D.day?'today':i===D.rent.dueDay?'due':''));
+    const perDay=left/daysLeft,curRate=(TIERS.filter(t=>fTot>=t[0]).pop()||TIERS[0])[1];
+    $('need-day').textContent=fmt(perDay);$('need-f').textContent=Math.ceil(perDay/curRate);$('need-l').textContent=Math.ceil(perDay/0.25).toLocaleString('en-US');
+    // race
+    const earn={};tx.forEach(x=>{if(x.platform)earn[x.platform]=(earn[x.platform]||0)+x.amt});
+    const fans=Object.values(earn).reduce((s,v)=>s+v,0);
+    const order=Object.keys(PLAT).sort((a,b)=>(earn[b]||0)-(earn[a]||0)),top=Math.max(1,...order.map(k=>earn[k]||0));
+    const BAR={youtube:'#ff2a2a',tiktok:'linear-gradient(90deg,#25f4ee,#fe2c55)',instagram:'linear-gradient(90deg,#f9a63a,#e1306c,#8a3ab9)'};
+    const race=$('race');race.innerHTML='';
+    order.forEach((k,i)=>{const v=earn[k]||0,lane=el('div','st-lane',`<span class="ic ${k}" aria-hidden="true">${PLAT[k].ic}<span class="rk${i?'':' first'}">${i+1}</span></span><div><div class="st-track"><i style="background:${BAR[k]}"></i></div><div class="st-meta"><span>${ICONS.follow}${(D.followers[k]||0).toLocaleString('en-US')}</span><span>${ICONS.like}${(D.likes[k]||0).toLocaleString('en-US')}</span></div></div><span class="amt num">${fmt(v)}</span>`);
+      lane.setAttribute('aria-label',`${PLAT[k].name}: ${fmt(v)}`);race.append(lane);
+      requestAnimationFrame(()=>{lane.querySelector('.st-track i').style.width=Math.max(3,v/top*100)+'%'})});
+    // balance curve: end-of-day balance from the first entry until today
+    const asc=[...tx].reverse(),pts=[];let run=0,i2=0;
+    if(asc.length){const d0=new Date(asc[0].t),endK=dayKey(new Date());let d=new Date(d0);
+      for(let g=0;g<400;g++){const k=dayKey(d);while(i2<asc.length&&dayKey(new Date(asc[i2].t))<=k){run+=asc[i2].amt;i2++}
+        pts.push({k,d:new Date(d),v:run});if(k>=endK)break;d=new Date(d.getTime()+864e5)}}
+    const C=$('curve'),W=320,H=170,L=22,R=22,T=40,B=30;
+    if(pts.length){const max=Math.max(10,...pts.map(p=>p.v)),n=pts.length,X=j=>n<2?W/2:L+j*(W-L-R)/(n-1),Y=v=>T+(H-T-B)*(1-Math.max(0,v)/max);
+      const line=pts.map((p,j)=>`${X(j).toFixed(1)},${Y(p.v).toFixed(1)}`).join(' ');
+      const every=Math.ceil(n/6),lblEvery=Math.ceil(n/4),cl=(x,w)=>Math.min(W-w/2,Math.max(w/2,x));
+      const pill=(p,j)=>{const t=fmt(p.v),w=t.length*7+16,x=cl(X(j),w),y=Y(p.v)-30,last=j===n-1;
+        return `<rect x="${(x-w/2).toFixed(1)}" y="${y.toFixed(1)}" width="${w}" height="22" rx="11" fill="${last?'#ffc94a':'#111522'}"/><text class="v${last?' last':''}" x="${x.toFixed(1)}" y="${(y+15).toFixed(1)}" text-anchor="middle">${t}</text>`};
+      const dateL=(p,j)=>{const t=p.d.toLocaleDateString('en-GB',{...tz,day:'numeric',month:'short'});return `<text x="${cl(X(j),t.length*6+4).toFixed(1)}" y="${H-8}" text-anchor="middle">${t}</text>`};
+      C.setAttribute('viewBox',`0 0 ${W} ${H}`);
+      C.innerHTML=`<defs><linearGradient id="area-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc94a" stop-opacity=".45"/><stop offset="1" stop-color="#ffc94a" stop-opacity="0"/></linearGradient></defs>`
+        +`<line x1="${L}" x2="${W-R}" y1="${H-B}" y2="${H-B}" stroke="var(--app-line)"/>`
+        +`<polygon points="${X(0)},${H-B} ${line} ${X(n-1)},${H-B}" fill="url(#area-g)"/>`
+        +`<polyline points="${line}" fill="none" stroke="#e0a21a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`
+        +pts.map((p,j)=>`<line x1="${X(j)}" x2="${X(j)}" y1="${Y(p.v)}" y2="${H-B}" stroke="#e0a21a" stroke-opacity=".25" stroke-dasharray="3 3"/>`).join('')
+        +pts.map((p,j)=>`<circle cx="${X(j)}" cy="${Y(p.v)}" r="${j===n-1?6:4}" fill="${j===n-1?'#ffc94a':'#fff'}" stroke="#e0a21a" stroke-width="2.5"/>`
+          +((j%every===0||j===n-1)?dateL(p,j):'')
+          +((j===n-1||j%lblEvery===0)&&!(j<n-1&&p.v===0&&n>2)?pill(p,j):'')).join('');
+      C.setAttribute('aria-label','Balance at the end of each day: '+pts.map(p=>p.k+' '+fmt(p.v)).join(', '))}
+    // tiers as a level road
+    const tiers=$('tiers');let ti=0;while(ti+1<TIERS.length&&fTot>=TIERS[ti+1][0])ti++;
+    const lab=['Start','100','1K','10K'],nx=TIERS[ti+1],from=TIERS[ti][0];
+    const frac=nx?Math.min(1,(fTot-from)/(nx[0]-from)):0,pos=(ti+frac)/(TIERS.length-1);
+    tiers.innerHTML=`<div class="st-road-trk"><i id="tier-bar"></i></div>`+TIERS.map(([,r],i)=>`<div class="st-node${i<ti?' done':i===ti?' on':''}"><span class="dot num">$${r}</span><small>${lab[i]}</small></div>`).join('');
+    tiers.setAttribute('aria-label',`Now $${TIERS[ti][1]} per follower`+(nx?`, $${nx[1]} from ${nx[0].toLocaleString('en-US')} followers`:''));
+    $('tier-prog').textContent=nx?`${fTot.toLocaleString('en-US')} / ${nx[0].toLocaleString('en-US')}`:fTot.toLocaleString('en-US');
+    requestAnimationFrame(()=>{$('tier-bar').style.width=(pos*100)+'%'});
 
     // vote
     const V=D.vote;$('vote-day').textContent='Day '+V.day;$('vote-q').textContent=V.question;
