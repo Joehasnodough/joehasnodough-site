@@ -1,5 +1,5 @@
 {
-   "day" : 2,
+   "day" : 3,
    "followers" : {
       "instagram" : 4,
       "tiktok" : 1,
@@ -33,6 +33,13 @@
       {
          "date" : "22 Nov",
          "day" : 3,
+         "text" : "You voted C: both jobs. Then Leo vanished in the park for 10 minutes (ice cream truck). Night shift at the burger place, 3 AM sleep roll: 3, awake. Mrs. Rivera still doesn't know.",
+         "title" : "I lost Leo",
+         "video" : "https://www.youtube.com/watch?v=JFuBKFZ-ANI"
+      },
+      {
+         "date" : "23 Nov",
+         "day" : 4,
          "text" : "Drops at 7 PM CET with the result of your vote.",
          "upcoming" : true
       }
@@ -240,36 +247,51 @@
          "n" : 13,
          "platform" : "instagram",
          "t" : "2026-11-22T18:09:00+01:00"
+      },
+      {
+         "amt" : 40,
+         "kind" : "earn",
+         "sub" : "Day 3 · afternoon · Mrs. Rivera",
+         "t" : "2026-11-22T19:00:00+01:00",
+         "title" : "Babysitting Leo"
+      },
+      {
+         "amt" : 30,
+         "icon" : "food",
+         "kind" : "earn",
+         "sub" : "Day 3 · 4 hours · night shift",
+         "t" : "2026-11-22T19:00:00+01:00",
+         "title" : "Burger shift"
+      },
+      {
+         "amt" : -12,
+         "kind" : "cost",
+         "sub" : "Day 3 · living costs",
+         "t" : "2026-11-22T19:00:00+01:00",
+         "title" : "Food"
       }
    ],
    "updated" : "2026-11-22T18:09:00+01:00",
    "vote" : {
-      "closes" : "2026-11-22T12:00:00+01:00",
-      "day" : 2,
+      "closes" : "2026-11-23T12:00:00+01:00",
+      "day" : 3,
       "options" : [
          {
             "key" : "A",
-            "note" : "$40 each = $120/week, but only 3 days",
-            "title" : "Babysit Leo 3 afternoons a week"
+            "note" : "Honest. A die decides: 1–2 = Joe is fired",
+            "title" : "Tell her the truth"
          },
          {
             "key" : "B",
-            "note" : "$30 a shift = $120/week, night shifts",
-            "title" : "Take the burger job, 4 nights"
+            "note" : "Risky. A die decides: 1–3 = Leo tells her, Joe is fired",
+            "title" : "Say nothing"
          },
          {
             "key" : "C",
-            "note" : "Up to $240/week, but if he falls asleep on the job, a dice roll decides which job he loses",
-            "title" : "Do both"
+            "note" : "−$40, but the job is safe",
+            "title" : "Tell her and work tomorrow for free"
          }
       ],
-      "question" : "What does Joe do?",
-      "result" : {
-         "at" : "2026-11-22T12:48:00+01:00",
-         "key" : "C",
-         "likes" : 1,
-         "platform" : "instagram",
-         "text" : "Do both. All 4 Instagram comments said C, TikTok too: \"do C and hope u dont fall asleep\""
-      }
+      "question" : "Mrs. Rivera doesn't know. Does Joe tell her?"
    }
 }
