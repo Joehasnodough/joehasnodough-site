@@ -185,6 +185,50 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
 .st-steps div{border-radius:12px 12px 6px 6px;background:var(--app-tile);display:grid;align-content:end;justify-items:center;padding:8px 4px;font-size:11px;color:var(--app-muted);font-weight:600}
 .st-steps b{font:700 17px/1.1 var(--text);color:var(--app-ink)}.st-steps .on{background:var(--gold)}.st-steps .on b,.st-steps .on{color:#1a1408}
 @media (max-width:420px){.st-side b{font-size:22px}.st-cal{gap:2px}.st-cal i{height:16px}}
+/* Vote (Umbau 22.11.): Countdown, Zeitleiste, klickbare Antworten */
+.vt-clock{display:flex;align-items:flex-start;justify-content:center;gap:4px}
+.vt-clock div{flex:1;max-width:100px;background:var(--app-tile);border-radius:16px;padding:12px 6px 10px;text-align:center}
+.vt-clock b{display:block;font:700 clamp(28px,8vw,36px)/1 var(--text);color:var(--app-ink);letter-spacing:-.03em}
+.vt-clock span{display:block;margin-top:6px;font:600 10px/1 var(--text);letter-spacing:.12em;text-transform:uppercase;color:var(--app-muted)}
+.vt-clock>i{font:600 24px/1 var(--text);font-style:normal;color:#c5cad8;padding-top:14px}
+.vt-clock.hot b{color:var(--gold-ink)}.vt-clock.done b{color:#b8bdcc}
+.vt-line{margin-top:22px}
+.vt-trk{position:relative;height:8px;border-radius:4px;background:var(--app-line);margin:0 calc(100%/6)}
+.vt-trk i{display:block;height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--gold-deep),var(--gold))}
+.vt-now{position:absolute;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#fff;border:4px solid var(--gold);box-shadow:0 0 0 5px rgba(255,201,74,.3);z-index:2}
+.vt-stops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:-13px;text-align:center}
+.vt-stops div{display:grid;justify-items:center;gap:2px}
+.vt-dot{width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--app-line);margin-bottom:6px;position:relative;z-index:1}
+.vt-dot.done{border-color:var(--gold);background:var(--gold)}.vt-dot.hot{border-color:var(--gold-deep)}
+.vt-stops b{font:700 15px/1.2 var(--text)}.vt-stops small{font-size:12px;color:var(--app-muted);font-weight:500}
+.vt-opts{display:grid;gap:10px}
+.vt-opt{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:44px minmax(0,1fr) 24px;gap:12px;align-items:center;padding:12px 14px;border-radius:18px;background:var(--app-tile);border:2px solid transparent;transition:transform .18s,border-color .18s,box-shadow .18s,background .18s}
+.vt-opt .k{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--app-ink);color:var(--gold);font:800 20px/1 var(--text);transition:background .18s,color .18s,transform .18s}
+.vt-txt b{display:block;font:700 15px/1.25 var(--text);color:var(--app-ink)}.vt-txt small{display:block;margin-top:3px;font-size:12.5px;line-height:1.35;color:var(--app-muted)}
+.vt-arrow{font:700 18px/1 var(--text);color:var(--app-muted);transition:transform .18s,color .18s}
+.vt-opt:hover,.vt-opt:focus-visible{transform:translateY(-2px);border-color:var(--gold);background:#fffaf0;box-shadow:0 10px 24px rgba(17,21,34,.12)}
+.vt-opt:hover .k,.vt-opt:focus-visible .k{background:var(--gold);color:#1a1408;transform:rotate(-6deg) scale(1.06)}
+.vt-opt:hover .vt-arrow,.vt-opt:focus-visible .vt-arrow{transform:translateX(4px);color:var(--gold-ink)}
+.vt-opt:active{transform:scale(.98)}
+.vt-own{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;margin-top:10px;padding:12px;border-radius:16px;border:2px dashed #cdd2de;text-align:center;font:700 14px/1 var(--text);color:var(--app-muted);transition:border-color .18s,color .18s}
+.vt-own:hover,.vt-own:focus-visible{border-color:var(--gold);color:var(--gold-ink)}
+.vt-sheet{position:fixed;inset:0;z-index:50;display:grid;align-items:end;justify-items:center}
+.vt-sheet[hidden]{display:none}
+.vt-back{position:absolute;inset:0;background:rgba(5,8,18,.6);opacity:0;transition:opacity .2s}
+.vt-card{position:relative;width:min(560px,100%);background:var(--app-bg);color:var(--app-ink);border-radius:28px 28px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px));transform:translateY(100%);transition:transform .25s cubic-bezier(.2,.9,.3,1);text-align:center}
+.vt-sheet.open .vt-back{opacity:1}.vt-sheet.open .vt-card{transform:none}
+.vt-x{all:unset;cursor:pointer;position:absolute;right:14px;top:12px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:400 24px/1 var(--text);color:var(--app-muted);background:var(--app-tile)}
+.vt-s-key{width:64px;height:64px;margin:0 auto 10px;border-radius:20px;display:grid;place-items:center;background:var(--gold);color:#1a1408;font:800 32px/1 var(--text)}
+.vt-s-key.own{font-size:28px}
+.vt-card h3{margin:0;font:800 22px/1.2 var(--text);letter-spacing:-.02em}
+.vt-card p{margin:6px 0 16px;font-size:14px;color:var(--app-muted)}.vt-card p b{color:var(--app-ink)}
+.vt-plats{display:grid;gap:8px;text-align:left}
+.vt-plat{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;padding:10px 14px 10px 10px;border-radius:16px;background:var(--app-tile);text-decoration:none;color:var(--app-ink);border:2px solid transparent;transition:border-color .18s,transform .18s}
+.vt-plat .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;font:800 13px/1 var(--text)}
+.vt-plat b{font:700 16px/1 var(--text)}.vt-go{font:700 18px/1 var(--text);color:var(--app-muted)}
+.vt-plat:hover,.vt-plat:focus-visible{border-color:var(--gold);transform:translateX(3px)}
+@media (min-width:640px){.vt-sheet{align-items:center}.vt-card{border-radius:28px;transform:translateY(24px) scale(.96);opacity:0;transition:transform .22s,opacity .22s}.vt-sheet.open .vt-card{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.vt-opt,.vt-opt .k,.vt-arrow,.vt-card,.vt-back,.vt-plat{transition:none}}
 /* Reiter-Leiste unten wie in einer App */
 .wrap{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);
@@ -261,13 +305,44 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
     <div class="st-road" id="tiers" role="img"></div>
   </section>
 
-  <section class="panel" data-tab="vote" aria-labelledby="vote-h">
-    <div class="panel-head"><h2 id="vote-h">Today's vote</h2><span class="eyebrow" id="vote-day">Day 1</span></div>
-    <p class="q" id="vote-q">What does Joe do first?</p>
-    <div class="opts" id="opts"></div>
-    <div class="count"><span id="count-label">Voting closes in</span><span class="num" id="countdown">--:--:--</span></div>
-    <p class="hint">Comment A, B, C or your own idea under the latest video. The most-liked comment wins, as long as it's legal and possible.</p>
+  <section class="panel" data-tab="vote" aria-labelledby="cd-h">
+    <div class="panel-head"><h2 id="cd-h">Voting closes in</h2><span class="eyebrow" id="vote-day">Day 1</span></div>
+    <div class="vt-clock" id="countdown" role="timer" aria-live="off">
+      <div><b class="num" id="cd-h1">--</b><span>hours</span></div><i>:</i>
+      <div><b class="num" id="cd-m">--</b><span>min</span></div><i>:</i>
+      <div><b class="num" id="cd-s">--</b><span>sec</span></div>
+    </div>
+    <div class="vt-line" id="vt-line" aria-hidden="true">
+      <div class="vt-trk"><i id="vt-fill"></i><span class="vt-now" id="vt-now"></span></div>
+      <div class="vt-stops">
+        <div><span class="vt-dot done"></span><b id="vt-t1">7 PM</b><small id="vt-l1">Day 1 out</small></div>
+        <div><span class="vt-dot hot"></span><b id="vt-t2">12 PM</b><small>Vote closes</small></div>
+        <div><span class="vt-dot"></span><b id="vt-t3">7 PM</b><small id="vt-l3">Day 2 out</small></div>
+      </div>
+    </div>
   </section>
+
+  <section class="panel" data-tab="vote" aria-labelledby="vote-h">
+    <div class="panel-head"><h2 id="vote-h">Your vote</h2><span class="eyebrow">Tap to vote</span></div>
+    <p class="q" id="vote-q">What does Joe do first?</p>
+    <div class="vt-opts" id="opts"></div>
+    <button type="button" class="vt-own" id="vt-own">Your own idea <span aria-hidden="true">→</span></button>
+  </section>
+
+  <div class="vt-sheet" id="vt-sheet" hidden>
+    <div class="vt-back" data-close></div>
+    <div class="vt-card" role="dialog" aria-modal="true" aria-labelledby="vt-s-h">
+      <button type="button" class="vt-x" data-close aria-label="Close">×</button>
+      <div class="vt-s-key" id="vt-s-key">A</div>
+      <h3 id="vt-s-h">Vote A</h3>
+      <p id="vt-s-p">Comment <b>A</b> under the latest video. Most likes wins.</p>
+      <div class="vt-plats">
+        <a class="vt-plat" id="vt-yt" target="_blank" rel="noopener"><span class="ic youtube">YT</span><b>YouTube</b><span class="vt-go" aria-hidden="true">→</span></a>
+        <a class="vt-plat" href="https://www.instagram.com/joehasnodough/" target="_blank" rel="noopener"><span class="ic instagram">IG</span><b>Instagram</b><span class="vt-go" aria-hidden="true">→</span></a>
+        <a class="vt-plat" href="https://www.tiktok.com/@joehasnodough" target="_blank" rel="noopener"><span class="ic tiktok">TT</span><b>TikTok</b><span class="vt-go" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
 
   <section class="panel" data-tab="story" aria-labelledby="story-h">
     <div class="panel-head"><h2 id="story-h">The story so far</h2><span class="eyebrow">Season 1</span></div>
@@ -437,10 +512,32 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
 
     // vote
     const V=D.vote;$('vote-day').textContent='Day '+V.day;$('vote-q').textContent=V.question;
-    const opts=$('opts');opts.innerHTML='';V.options.forEach(o=>opts.append(el('div','opt',`<span class="k">${esc(o.key)}</span><div><b>${esc(o.title)}</b><small>${esc(o.note||'')}</small></div>`)));
-    const end=new Date(V.closes).getTime(),cd=$('countdown');
-    (function tick(){const ms=end-Date.now();if(ms<=0){$('count-label').textContent='Voting is';cd.textContent='Closed';return}
-      const s=Math.floor(ms/1000);cd.textContent=[Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(v=>String(v).padStart(2,'0')).join(':');setTimeout(tick,1000-(Date.now()%1000))})();
+    // timeline: episode out (7 PM day before) -> vote closes -> next episode (7 PM)
+    const end=new Date(V.closes).getTime(),start=V.opens?new Date(V.opens).getTime():end-17*36e5,next=V.result?new Date(V.result).getTime():end+7*36e5;
+    const hm=t=>new Date(t).toLocaleTimeString('en-US',{...tz,hour:'numeric',minute:'2-digit'}).replace(':00','');
+    $('vt-t1').textContent=hm(start);$('vt-t2').textContent=hm(end);$('vt-t3').textContent=hm(next);
+    $('vt-l1').textContent=`Day ${V.day} out`;$('vt-l3').textContent=`Day ${V.day+1} out`;
+    const pad=v=>String(v).padStart(2,'0');
+    (function tick(){const now=Date.now(),ms=end-now;
+      const p=now<=end?(now-start)/(end-start)*0.5:0.5+Math.min(1,(now-end)/(next-end))*0.5,pc=Math.max(0,Math.min(1,p))*100;
+      $('vt-fill').style.width=pc+'%';$('vt-now').style.left=pc+'%';
+      if(ms<=0){$('cd-h').textContent='Voting closed';$('countdown').classList.add('done');['cd-h1','cd-m','cd-s'].forEach(i=>$(i).textContent='00');setTimeout(tick,30000);return}
+      const s=Math.floor(ms/1000);$('cd-h1').textContent=pad(Math.floor(s/3600));$('cd-m').textContent=pad(Math.floor(s%3600/60));$('cd-s').textContent=pad(s%60);
+      $('countdown').classList.toggle('hot',ms<36e5);setTimeout(tick,1000-(Date.now()%1000))})();
+    // options -> pick a platform
+    const yt=[...D.story].reverse().find(s=>s.video);$('vt-yt').href=yt?yt.video:'https://www.youtube.com/@joehasnodough';
+    const sheet=$('vt-sheet');let lastBtn=null;
+    const openSheet=(key,btn)=>{lastBtn=btn;$('vt-s-key').textContent=key||'?';$('vt-s-key').classList.toggle('own',!key);
+      $('vt-s-h').textContent=key?`Vote ${key}`:'Your own idea';
+      $('vt-s-p').innerHTML=key?`Comment <b>${esc(key)}</b> under the latest video. Most likes wins.`:'Comment your idea under the latest video. Legal and possible. Most likes wins.';
+      sheet.hidden=false;requestAnimationFrame(()=>sheet.classList.add('open'));sheet.querySelector('.vt-plat').focus()};
+    const closeSheet=()=>{sheet.classList.remove('open');setTimeout(()=>{sheet.hidden=true},220);if(lastBtn)lastBtn.focus()};
+    if(!sheet.dataset.wired){sheet.dataset.wired=1;document.body.append(sheet);
+      sheet.addEventListener('click',e=>{if(e.target.closest('[data-close]'))closeSheet()});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!sheet.hidden)closeSheet()});
+      $('vt-own').addEventListener('click',e=>openSheet('',e.currentTarget))}
+    const opts=$('opts');opts.innerHTML='';V.options.forEach(o=>{const b=el('button','vt-opt',`<span class="k">${esc(o.key)}</span><span class="vt-txt"><b>${esc(o.title)}</b><small>${esc(o.note||'')}</small></span><span class="vt-arrow" aria-hidden="true">→</span>`);
+      b.type='button';b.addEventListener('click',()=>openSheet(o.key,b));opts.append(b)});
 
     // story
     const st=$('story');st.innerHTML='';D.story.forEach(s=>st.append(el('div','dayc'+(s.upcoming?' next':''),
