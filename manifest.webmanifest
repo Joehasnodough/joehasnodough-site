@@ -2,7 +2,7 @@
   "name": "Joe Has No Dough",
   "short_name": "Joe",
   "description": "Joe starts with $0. Your follows and likes are his income, your comments decide his life.",
-  "start_url": "./#money",
+  "start_url": "./#home",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
