@@ -279,6 +279,24 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
 .hm-fbtns a:hover,.hm-fbtns a:focus-visible{transform:translateY(-2px);border-color:var(--gold)}
 .hm-fbtns .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:#fff;font:800 14px/1 var(--text)}.hm-fbtns b{font:700 13px/1 var(--text)}
 @media (prefers-reduced-motion:reduce){.hm-tile,.hm-money,.hm-ep img,.hm-abc i,.hm-fbtns a{transition:none}}
+/* Vote: führender Kommentar / Ergebnis (22.11.) */
+.vt-quote{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;align-items:start;background:var(--app-tile);border-radius:20px;padding:16px}
+.vt-q-key{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--app-ink);color:var(--gold);font:800 26px/1 var(--text)}
+.vt-q-key.own{font-size:30px}
+.vt-q-body p{margin:0;font:600 17px/1.4 var(--text);color:var(--app-ink);letter-spacing:-.01em}
+.vt-q-meta{display:flex;align-items:center;gap:10px;margin-top:10px}
+.vt-q-plat{padding:4px 9px;border-radius:8px;font:800 11px/1 var(--text);color:#fff;background:var(--app-muted)}
+.vt-q-plat.youtube{background:#ff2a2a}.vt-q-plat.instagram{background:linear-gradient(45deg,#f9a63a,#e1306c 55%,#8a3ab9)}.vt-q-plat.tiktok{background:#111522;box-shadow:inset 2px 0 0 #25f4ee,inset -2px 0 0 #fe2c55}
+.vt-q-likes{display:inline-flex;align-items:center;gap:5px;font:700 14px/1 var(--text);color:var(--minus)}
+.vt-q-likes svg{width:17px;height:17px;fill:var(--minus);stroke:none}
+.vt-q-note{margin:10px 2px 0;font-size:12.5px;color:var(--app-muted)}
+.vt-lead.none{display:none!important}
+.vt-lead.win .vt-quote{background:var(--gold)}.vt-lead.win .vt-q-key{background:#1a1408}.vt-lead.win .vt-q-body p{color:#1a1408}
+.vt-lead.win .panel-head .eyebrow{color:var(--gold-ink)}
+.vt-lead.wait .vt-quote{border:2px dashed #cdd2de;background:transparent}
+.vt-opt.lead{border-color:var(--gold)}.vt-opt.lead .k{background:var(--gold);color:#1a1408}
+.vt-opt.lead .vt-txt b::after,.vt-opt.won .vt-txt b::after{content:"LEADING";margin-left:8px;padding:3px 6px;border-radius:6px;background:#fff6dd;color:var(--gold-ink);font:800 9px/1 var(--text);letter-spacing:.08em;vertical-align:2px}
+.vt-opt.won{border-color:var(--gold);background:#fffaf0}.vt-opt.won .k{background:var(--gold);color:#1a1408}.vt-opt.won .vt-txt b::after{content:"WINNER";background:var(--gold);color:#1a1408}
 /* Story (Umbau 22.11.): Zeitleiste mit Cover-Karten */
 .sy-line{position:relative;display:grid;gap:12px;padding-left:26px}
 .sy-line::before{content:"";position:absolute;left:8px;top:14px;bottom:14px;width:3px;border-radius:2px;background:linear-gradient(180deg,var(--gold),var(--gold-deep) 70%,#d7dbe6)}
@@ -438,6 +456,17 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
         <div><span class="vt-dot"></span><b id="vt-t3">7 PM</b><small id="vt-l3">Day 2 out</small></div>
       </div>
     </div>
+  </section>
+
+  <section class="panel vt-lead none" data-tab="vote" id="vt-lead" aria-labelledby="lead-h">
+    <div class="panel-head"><h2 id="lead-h">Leading right now</h2><span class="eyebrow" id="lead-at"></span></div>
+    <div class="vt-quote" id="lead-card">
+      <span class="vt-q-key" id="lead-key" aria-hidden="true">“</span>
+      <div class="vt-q-body"><p id="lead-text"></p>
+        <div class="vt-q-meta"><span class="vt-q-plat" id="lead-plat"></span><span class="vt-q-likes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><b class="num" id="lead-likes">0</b></span></div>
+      </div>
+    </div>
+    <p class="vt-q-note" id="lead-note"></p>
   </section>
 
   <section class="panel" data-tab="vote" aria-labelledby="vote-h">
@@ -640,7 +669,7 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
     // vote
     const V=D.vote;$('vote-day').textContent='Day '+V.day;$('vote-q').textContent=V.question;
     // timeline: episode out (7 PM day before) -> vote closes -> next episode (7 PM)
-    const end=new Date(V.closes).getTime(),start=V.opens?new Date(V.opens).getTime():end-17*36e5,next=V.result?new Date(V.result).getTime():end+7*36e5;
+    const end=new Date(V.closes).getTime(),start=V.opens?new Date(V.opens).getTime():end-17*36e5,next=V.nextAt?new Date(V.nextAt).getTime():end+7*36e5;
     const hm=t=>new Date(t).toLocaleTimeString('en-US',{...tz,hour:'numeric',minute:'2-digit'}).replace(':00','');
     $('vt-t1').textContent=hm(start);$('vt-t2').textContent=hm(end);$('vt-t3').textContent=hm(next);
     $('vt-l1').textContent=`Day ${V.day} out`;$('vt-l3').textContent=`Day ${V.day+1} out`;
@@ -663,7 +692,20 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
       sheet.addEventListener('click',e=>{if(e.target.closest('[data-close]'))closeSheet()});
       document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!sheet.hidden)closeSheet()});
       $('vt-own').addEventListener('click',e=>openSheet('',e.currentTarget))}
-    const opts=$('opts');opts.innerHTML='';V.options.forEach(o=>{const b=el('button','vt-opt',`<span class="k">${esc(o.key)}</span><span class="vt-txt"><b>${esc(o.title)}</b><small>${esc(o.note||'')}</small></span><span class="vt-arrow" aria-hidden="true">→</span>`);
+    // leading comment while open, result after the countdown
+    const PN={youtube:'YouTube',instagram:'Instagram',tiktok:'TikTok'};
+    const closed=Date.now()>=end,VR=V.result,Ld=V.leader,show=closed?(VR||Ld):Ld,isRes=closed&&!!VR;
+    const lp=$('vt-lead');lp.classList.toggle('none',!show);lp.classList.toggle('win',isRes);lp.classList.toggle('wait',closed&&!VR);
+    if(show){$('lead-h').textContent=isRes?`Result · Day ${V.day}`:closed?'Votes are being counted':'Leading right now';
+      $('lead-at').textContent=isRes?'Winner':(show.at?'As of '+timeOf(new Date(show.at)):'');
+      $('lead-key').textContent=show.key||(show.own?'★':'“');$('lead-key').classList.toggle('own',!show.key);
+      const opt=show.key&&V.options.find(o=>o.key===show.key);
+      $('lead-text').textContent=show.text||(opt?opt.title:'');
+      const pl=$('lead-plat');pl.textContent=PN[show.platform]||'';pl.className='vt-q-plat '+(show.platform||'');pl.hidden=!PN[show.platform];
+      $('lead-likes').textContent=(show.likes||0).toLocaleString('en-US');
+      $('lead-note').textContent=isRes?`Day ${V.day+1} shows what happens · drops at ${hm(next)} CET`:closed?`Last leader on ${PN[show.platform]||'YouTube'}. We count Instagram and TikTok too, the result follows before ${hm(next)}.`:`Most-liked comment on ${PN[show.platform]||'YouTube'} so far. Instagram and TikTok count too.`}
+    const leadKey=show&&show.key;
+    const opts=$('opts');opts.innerHTML='';V.options.forEach(o=>{const b=el('button','vt-opt'+(leadKey===o.key?(isRes?' won':' lead'):''),`<span class="k">${esc(o.key)}</span><span class="vt-txt"><b>${esc(o.title)}</b><small>${esc(o.note||'')}</small></span><span class="vt-arrow" aria-hidden="true">→</span>`);
       b.type='button';b.addEventListener('click',()=>openSheet(o.key,b));opts.append(b)});
 
     // story
@@ -680,7 +722,7 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
       $('sy-s-d').textContent=`Day ${s.day} · ${s.date}`;$('sy-s-h').textContent=s.title||`Day ${s.day}`;$('sy-s-p').textContent=s.text;
       $('sy-yt').href=s.video||'https://www.youtube.com/@joehasnodough';
       sy.hidden=false;requestAnimationFrame(()=>sy.classList.add('open'));sy.querySelector('.vt-plat').focus()};
-    const relNext=V&&V.result?new Date(V.result).getTime():(V?new Date(V.closes).getTime()+7*36e5:0);
+    const relNext=V&&V.nextAt?new Date(V.nextAt).getTime():(V?new Date(V.closes).getTime()+7*36e5:0);
     D.story.forEach((s,i)=>{const last=i===D.story.length-1;
       if(s.upcoming){const c=el('div','sy-item next',`<span class="sy-node" aria-hidden="true"></span><div class="sy-c"><span class="sy-cover q" aria-hidden="true">?</span><span class="sy-txt"><span class="sy-d">DAY ${s.day} · ${esc(s.date)}</span><b>Coming next</b><small>${esc(s.text)}</small><span class="sy-soon" data-at="${relNext}"></span></span></div>`);st.append(c);return}
       const b=el('button','sy-item',`<span class="sy-node${last||D.story[i+1]&&D.story[i+1].upcoming?' now':''}" aria-hidden="true"></span><span class="sy-c"><span class="sy-cover"><img src="${esc(cov(s))}" alt="" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="sy-play">${PLAY}</span></span><span class="sy-txt"><span class="sy-d">DAY ${s.day} · ${esc(s.date)}</span><b>${esc(s.title||'Day '+s.day)}</b><small>${esc(s.text)}</small></span><span class="vt-arrow" aria-hidden="true">→</span></span>`);
