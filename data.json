@@ -7,7 +7,7 @@
    },
    "interim" : false,
    "likes" : {
-      "instagram" : 21,
+      "instagram" : 22,
       "tiktok" : 6,
       "youtube" : 19
    },
@@ -204,9 +204,16 @@
          "n" : 1,
          "platform" : "instagram",
          "t" : "2026-11-22T12:09:00+01:00"
+      },
+      {
+         "amt" : 0.25,
+         "kind" : "like",
+         "n" : 1,
+         "platform" : "instagram",
+         "t" : "2026-11-22T12:41:00+01:00"
       }
    ],
-   "updated" : "2026-11-22T12:09:00+01:00",
+   "updated" : "2026-11-22T12:41:00+01:00",
    "vote" : {
       "closes" : "2026-11-22T12:00:00+01:00",
       "day" : 2,
@@ -227,6 +234,13 @@
             "title" : "Do both"
          }
       ],
-      "question" : "What does Joe do?"
+      "question" : "What does Joe do?",
+      "result" : {
+         "at" : "2026-11-22T12:48:00+01:00",
+         "key" : "C",
+         "likes" : 1,
+         "platform" : "instagram",
+         "text" : "Do both. All 4 Instagram comments said C, TikTok too: \"do C and hope u dont fall asleep\""
+      }
    }
 }
