@@ -20,12 +20,14 @@
          "date" : "20 Nov",
          "day" : 1,
          "text" : "Joe has $0, an empty fridge and $900 rent due in 30 days. You get to decide how he survives.",
+         "title" : "Joe has $0",
          "video" : "https://www.youtube.com/watch?v=wvdVFkNSwFc"
       },
       {
          "date" : "21 Nov",
          "day" : 2,
          "text" : "You voted for $900 and a new son. No free money, but neighbor Mrs. Rivera needed a babysitter: Joe played baseball with her son Leo and earned $40.",
+         "title" : "Joe has a son?!",
          "video" : "https://www.youtube.com/watch?v=1LzX9iBu5BU"
       },
       {
