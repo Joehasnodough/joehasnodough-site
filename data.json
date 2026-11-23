@@ -327,6 +327,13 @@
             "title" : "Tell her and work tomorrow for free"
          }
       ],
-      "question" : "Mrs. Rivera doesn't know. Does Joe tell her?"
+      "question" : "Mrs. Rivera doesn't know. Does Joe tell her?",
+      "result" : {
+         "at" : "2026-11-23T16:35:00+01:00",
+         "key" : "A",
+         "likes" : 0,
+         "platform" : "tiktok",
+         "text" : "do A the truth is always the best"
+      }
    }
 }
