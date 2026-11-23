@@ -2,13 +2,13 @@
    "day" : 4,
    "followers" : {
       "instagram" : 4,
-      "tiktok" : 1,
+      "tiktok" : 2,
       "youtube" : 20
    },
    "interim" : false,
    "likes" : {
-      "instagram" : 40,
-      "tiktok" : 12,
+      "instagram" : 42,
+      "tiktok" : 14,
       "youtube" : 45
    },
    "rent" : {
@@ -327,14 +327,36 @@
          "sub" : "Day 4 · living costs",
          "t" : "2026-11-23T19:00:00+01:00",
          "title" : "Food"
+      },
+      {
+         "amt" : 5,
+         "kind" : "follow",
+         "n" : 1,
+         "platform" : "tiktok",
+         "rate" : 5,
+         "t" : "2026-11-23T22:46:00+01:00"
+      },
+      {
+         "amt" : 0.5,
+         "kind" : "like",
+         "n" : 2,
+         "platform" : "tiktok",
+         "t" : "2026-11-23T22:46:00+01:00"
+      },
+      {
+         "amt" : 0.5,
+         "kind" : "like",
+         "n" : 2,
+         "platform" : "instagram",
+         "t" : "2026-11-23T22:46:00+01:00"
       }
    ],
-   "updated" : "2026-11-23T19:27:00+01:00",
+   "updated" : "2026-11-23T22:46:00+01:00",
    "vote" : {
       "closes" : "2026-11-24T12:00:00+01:00",
       "day" : 4,
       "leader" : {
-         "at" : "2026-11-23T19:27:00+01:00",
+         "at" : "2026-11-23T22:46:00+01:00",
          "likes" : 0,
          "platform" : "youtube",
          "text" : "RULES: follow = $5 · like = $0.25 · most-liked comment by 12:00 CET decides tomorrow (A, B, C or YOUR own idea – the crazier the better, must be legal & possible). Best comments get read out. Live bank: joehasnodough.com"
