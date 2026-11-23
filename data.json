@@ -1,5 +1,5 @@
 {
-   "day" : 3,
+   "day" : 4,
    "followers" : {
       "instagram" : 4,
       "tiktok" : 1,
@@ -8,7 +8,7 @@
    "interim" : false,
    "likes" : {
       "instagram" : 40,
-      "tiktok" : 10,
+      "tiktok" : 12,
       "youtube" : 45
    },
    "rent" : {
@@ -40,6 +40,13 @@
       {
          "date" : "23 Nov",
          "day" : 4,
+         "text" : "You voted A: Joe told Mrs. Rivera the truth. The real die rolled a 2: fired. Leo slipped him a note, a drawing of the man from apartment 4B. At midnight, that man knocked: \"I have an offer.\"",
+         "title" : "Someone knocked",
+         "video" : "https://www.youtube.com/watch?v=5lz4iBMhKb0"
+      },
+      {
+         "date" : "24 Nov",
+         "day" : 5,
          "text" : "Drops at 7 PM CET with the result of your vote.",
          "upcoming" : true
       }
@@ -298,42 +305,57 @@
          "n" : 2,
          "platform" : "youtube",
          "t" : "2026-11-23T06:23:00+01:00"
+      },
+      {
+         "amt" : 0.5,
+         "kind" : "like",
+         "n" : 2,
+         "platform" : "tiktok",
+         "t" : "2026-11-23T19:27:00+01:00"
+      },
+      {
+         "amt" : 30,
+         "icon" : "food",
+         "kind" : "earn",
+         "sub" : "Day 4 · 4 hours · night shift",
+         "t" : "2026-11-23T19:00:00+01:00",
+         "title" : "Burger shift"
+      },
+      {
+         "amt" : -12,
+         "kind" : "cost",
+         "sub" : "Day 4 · living costs",
+         "t" : "2026-11-23T19:00:00+01:00",
+         "title" : "Food"
       }
    ],
-   "updated" : "2026-11-23T18:09:00+01:00",
+   "updated" : "2026-11-23T19:27:00+01:00",
    "vote" : {
-      "closes" : "2026-11-23T12:00:00+01:00",
-      "day" : 3,
+      "closes" : "2026-11-24T12:00:00+01:00",
+      "day" : 4,
       "leader" : {
-         "at" : "2026-11-23T10:10:00+01:00",
+         "at" : "2026-11-23T19:27:00+01:00",
          "likes" : 0,
          "platform" : "youtube",
-         "text" : "RULES: follow = $5 · like = $0.25 · most-liked comment by 12:00 CET decides tomorrow (A, B, C or your own idea). Must be legal & possible. Live bank: joehasnodough.com"
+         "text" : "RULES: follow = $5 · like = $0.25 · most-liked comment by 12:00 CET decides tomorrow (A, B, C or YOUR own idea – the crazier the better, must be legal & possible). Best comments get read out. Live bank: joehasnodough.com"
       },
       "options" : [
          {
             "key" : "A",
-            "note" : "Honest. A die decides: 1–2 = Joe is fired",
-            "title" : "Tell her the truth"
+            "note" : "Hear the offer from 4B",
+            "title" : "Open the door"
          },
          {
             "key" : "B",
-            "note" : "Risky. A die decides: 1–3 = Leo tells her, Joe is fired",
-            "title" : "Say nothing"
+            "note" : "$8 · try to make peace",
+            "title" : "Ignore him, bake cookies for Leo"
          },
          {
             "key" : "C",
-            "note" : "−$40, but the job is safe",
-            "title" : "Tell her and work tomorrow for free"
+            "note" : "−$50 entry · $300 if he wins",
+            "title" : "Bet on a street basketball tournament"
          }
       ],
-      "question" : "Mrs. Rivera doesn't know. Does Joe tell her?",
-      "result" : {
-         "at" : "2026-11-23T16:35:00+01:00",
-         "key" : "A",
-         "likes" : 0,
-         "platform" : "tiktok",
-         "text" : "do A the truth is always the best"
-      }
+      "question" : "The man from 4B knocks: \"I have an offer.\" What does Joe do?"
    }
 }
