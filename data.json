@@ -444,6 +444,13 @@
             "title" : "Bet on a street basketball tournament"
          }
       ],
-      "question" : "The man from 4B knocks: \"I have an offer.\" What does Joe do?"
+      "question" : "The man from 4B knocks: \"I have an offer.\" What does Joe do?",
+      "result" : {
+         "at" : "2026-11-24T17:46:00+01:00",
+         "key" : "A",
+         "likes" : 0,
+         "platform" : "tiktok",
+         "text" : "Do A maybe HE has a bussines company"
+      }
    }
 }
