@@ -7,8 +7,8 @@
    },
    "interim" : false,
    "likes" : {
-      "instagram" : 42,
-      "tiktok" : 15,
+      "instagram" : 43,
+      "tiktok" : 17,
       "youtube" : 46
    },
    "rent" : {
@@ -371,14 +371,28 @@
          "n" : 1,
          "platform" : "tiktok",
          "t" : "2026-11-24T03:41:00+01:00"
+      },
+      {
+         "amt" : 0.5,
+         "kind" : "like",
+         "n" : 2,
+         "platform" : "tiktok",
+         "t" : "2026-11-24T08:38:00+01:00"
+      },
+      {
+         "amt" : 0.25,
+         "kind" : "like",
+         "n" : 1,
+         "platform" : "instagram",
+         "t" : "2026-11-24T08:38:00+01:00"
       }
    ],
-   "updated" : "2026-11-24T03:41:00+01:00",
+   "updated" : "2026-11-24T08:38:00+01:00",
    "vote" : {
       "closes" : "2026-11-24T12:00:00+01:00",
       "day" : 4,
       "leader" : {
-         "at" : "2026-11-24T03:41:00+01:00",
+         "at" : "2026-11-24T08:38:00+01:00",
          "likes" : 0,
          "platform" : "youtube",
          "text" : "RULES: follow = $5 · like = $0.25 · most-liked comment by 12:00 CET decides tomorrow (A, B, C or YOUR own idea – the crazier the better, must be legal & possible). Best comments get read out. Live bank: joehasnodough.com"
