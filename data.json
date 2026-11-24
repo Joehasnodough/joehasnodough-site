@@ -1,7 +1,7 @@
 {
    "day" : 5,
    "followers" : {
-      "instagram" : 4,
+      "instagram" : 5,
       "tiktok" : 13,
       "youtube" : 20
    },
@@ -9,7 +9,7 @@
    "likes" : {
       "instagram" : 43,
       "tiktok" : 29,
-      "youtube" : 47
+      "youtube" : 48
    },
    "rent" : {
       "amount" : 900,
@@ -467,9 +467,24 @@
          "sub" : "Day 5 · living costs",
          "t" : "2026-11-24T19:00:00+01:00",
          "title" : "Food"
+      },
+      {
+         "amt" : 0.25,
+         "kind" : "like",
+         "n" : 1,
+         "platform" : "youtube",
+         "t" : "2026-11-24T21:09:00+01:00"
+      },
+      {
+         "amt" : 5,
+         "kind" : "follow",
+         "n" : 1,
+         "platform" : "instagram",
+         "rate" : 5,
+         "t" : "2026-11-24T21:09:00+01:00"
       }
    ],
-   "updated" : "2026-11-24T19:26:00+01:00",
+   "updated" : "2026-11-24T21:09:00+01:00",
    "vote" : {
       "closes" : "2026-11-25T12:00:00+01:00",
       "day" : 5,
