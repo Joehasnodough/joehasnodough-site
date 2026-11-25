@@ -182,6 +182,11 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
 .st-meta svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .st-lane .amt{font:700 16px/1 var(--text);color:var(--plus)}
 .st-chart{width:100%;height:auto;display:block;overflow:visible}
+.st-cal i.ev{background:var(--ev,#e5484d);box-shadow:0 0 0 2px color-mix(in srgb,var(--ev,#e5484d) 30%,transparent)}
+.st-evkey{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:10px;font:600 12px/1.3 var(--text);color:var(--app-muted)}
+.st-evkey:empty{display:none}
+.st-evkey span{display:inline-flex;align-items:center;gap:6px}.st-evkey i{width:10px;height:10px;border-radius:50%;background:var(--ev,#e5484d)}
+.st-evkey b{color:var(--app-ink);font-weight:700}
 .st-chart text{font-family:var(--text);font-size:11px;fill:var(--app-muted);font-weight:500}.st-chart .v{fill:#fff;font-weight:700;font-size:12px}.st-chart .v.last{fill:#1a1408}
 .st-road{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:4px 0 2px}
 .st-road-trk{position:absolute;left:12.5%;right:12.5%;top:25px;height:8px;border-radius:4px;background:var(--app-line);overflow:hidden}
@@ -328,6 +333,15 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
 .sy-s-d{display:block;text-align:center;color:var(--gold-ink)}
 .sy-card h3{text-align:center;margin-top:6px}
 .sy-card p{text-align:center;color:var(--app-ink);font-size:14.5px;line-height:1.5;margin:8px 0 16px}
+.sy-item.ev{--ev:#e5484d;--ev-bg:#fff1f1}.sy-item.ev-good{--ev:#1f9d5c;--ev-bg:#eefaf3}.sy-item.ev-twist{--ev:#7c5cff;--ev-bg:#f4f1ff}
+.sy-item.ev .sy-node{background:var(--ev);box-shadow:0 0 0 4px color-mix(in srgb,var(--ev) 25%,transparent)}
+.sy-item.ev .sy-c{background:var(--ev-bg);border-color:color-mix(in srgb,var(--ev) 45%,transparent)}
+.sy-item.ev:hover .sy-c,.sy-item.ev:focus-visible .sy-c{border-color:var(--ev);background:var(--ev-bg)}
+.sy-item.ev .sy-cover::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 3px var(--ev);border-radius:14px;pointer-events:none}
+.sy-ev{justify-self:start;display:inline-flex;align-items:center;gap:5px;padding:4px 9px;border-radius:999px;background:var(--ev,#e5484d);color:#fff;font:800 10.5px/1 var(--text);letter-spacing:.08em}
+.sy-ev::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff}
+.sy-ev-wrap{text-align:center;margin-top:8px}
+.sy-ev-wrap:empty{display:none}
 @media (prefers-reduced-motion:reduce){.sy-c,.sy-cover img,.sy-play{transition:none}}
 /* Reiter-Leiste unten wie in einer App */
 .wrap{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
@@ -423,6 +437,7 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
       </div>
     </div>
     <div class="st-cal" id="rent-cal" aria-hidden="true"></div>
+    <div class="st-evkey" id="cal-key"></div>
     <div class="st-need">
       <div class="st-need-l"><span>Joe needs per day</span><b class="num" id="need-day">–</b></div>
       <div class="st-pills"><span class="st-pill"><svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20a6.5 6.5 0 0 1 13 0M19 8v6M16 11h6"/></svg><b class="num" id="need-f">–</b></span><i>or</i><span class="st-pill"><svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><b class="num" id="need-l">–</b></span></div>
@@ -437,6 +452,7 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
   <section class="panel" data-tab="stats" aria-labelledby="curve-h">
     <div class="panel-head"><h2 id="curve-h">Balance</h2><span class="eyebrow">End of each day</span></div>
     <svg class="st-chart" id="curve" viewBox="0 0 320 150" role="img" aria-label="Balance at the end of each day"></svg>
+    <div class="st-evkey" id="curve-key"></div>
     <div class="panel-head" style="margin:18px 0 10px"><h2 style="font-size:16px">Pay per follower</h2><span class="eyebrow num" id="tier-prog">–</span></div>
     <div class="st-road" id="tiers" role="img"></div>
   </section>
@@ -503,6 +519,7 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
       <div class="sy-hero"><img id="sy-s-img" alt=""><span class="sy-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></div>
       <span class="eyebrow sy-s-d" id="sy-s-d">Day 1</span>
       <h3 id="sy-s-h">Day 1</h3>
+      <div class="sy-ev-wrap" id="sy-s-ev"></div>
       <p id="sy-s-p"></p>
       <div class="vt-plats">
         <a class="vt-plat" id="sy-yt" target="_blank" rel="noopener"><span class="ic youtube">YT</span><b>Watch on YouTube</b><span class="vt-go" aria-hidden="true">→</span></a>
@@ -623,7 +640,10 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
     $('ring-saved').textContent='$'+Math.floor(saved).toLocaleString('en-US');$('ring-of').textContent='of $'+rent.toLocaleString('en-US');
     requestAnimationFrame(()=>{$('ring-val').style.strokeDasharray=`${Math.min(1,saved/rent)*314.16} 315`});
     $('rent-left').textContent='$'+Math.ceil(left).toLocaleString('en-US');$('rent-days').textContent=daysLeft;
-    const cal=$('rent-cal');cal.innerHTML='';for(let i=1;i<=D.rent.dueDay;i++)cal.append(el('i',i<D.day?'past':i===D.day?'today':i===D.rent.dueDay?'due':''));
+    const EVC={bad:'#e5484d',good:'#1f9d5c',twist:'#7c5cff'},EVS=(D.story||[]).filter(s=>!s.upcoming&&s.event&&s.event.label).map(s=>({day:s.day,date:s.date,label:s.event.label,c:EVC[s.event.type]||EVC.bad}));
+    const evKey=id=>{const k=$(id);k.innerHTML='';EVS.forEach(e=>{const x=el('span','',`<i style="--ev:${e.c}"></i><b>Day ${e.day}</b> ${esc(e.label)}`);k.append(x)})};
+    const cal=$('rent-cal');cal.innerHTML='';for(let i=1;i<=D.rent.dueDay;i++){const e=EVS.find(x=>x.day===i),c=el('i',(i<D.day?'past':i===D.day?'today':i===D.rent.dueDay?'due':'')+(e?' ev':''));if(e)c.style.setProperty('--ev',e.c);cal.append(c)}
+    evKey('cal-key');
     const perDay=left/daysLeft,curRate=(TIERS.filter(t=>fTot>=t[0]).pop()||TIERS[0])[1];
     $('need-day').textContent=fmt(perDay);$('need-f').textContent=Math.ceil(perDay/curRate);$('need-l').textContent=Math.ceil(perDay/0.25).toLocaleString('en-US');
     // race
@@ -653,10 +673,11 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
         +`<polygon points="${X(0)},${H-B} ${line} ${X(n-1)},${H-B}" fill="url(#area-g)"/>`
         +`<polyline points="${line}" fill="none" stroke="#e0a21a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`
         +pts.map((p,j)=>`<line x1="${X(j)}" x2="${X(j)}" y1="${Y(p.v)}" y2="${H-B}" stroke="#e0a21a" stroke-opacity=".25" stroke-dasharray="3 3"/>`).join('')
-        +pts.map((p,j)=>`<circle cx="${X(j)}" cy="${Y(p.v)}" r="${j===n-1?6:4}" fill="${j===n-1?'#ffc94a':'#fff'}" stroke="#e0a21a" stroke-width="2.5"/>`
+        +pts.map((p,j)=>{const e=EVS.find(x=>x.date===p.d.toLocaleDateString('en-GB',{...tz,day:'numeric',month:'short'}));return (e?`<circle cx="${X(j)}" cy="${Y(p.v)}" r="10" fill="${e.c}" fill-opacity=".18"/><circle cx="${X(j)}" cy="${Y(p.v)}" r="6" fill="${e.c}" stroke="#fff" stroke-width="2"/>`:`<circle cx="${X(j)}" cy="${Y(p.v)}" r="${j===n-1?6:4}" fill="${j===n-1?'#ffc94a':'#fff'}" stroke="#e0a21a" stroke-width="2.5"/>`)
           +((j%every===0||j===n-1)?dateL(p,j):'')
-          +((j===n-1||j%lblEvery===0)&&!(j<n-1&&p.v===0&&n>2)?pill(p,j):'')).join('');
-      C.setAttribute('aria-label','Balance at the end of each day: '+pts.map(p=>p.k+' '+fmt(p.v)).join(', '))}
+          +((j===n-1||j%lblEvery===0)&&!(j<n-1&&p.v===0&&n>2)?pill(p,j):'')}).join('');
+      C.setAttribute('aria-label','Balance at the end of each day: '+pts.map(p=>p.k+' '+fmt(p.v)).join(', ')+(EVS.length?'. Key events: '+EVS.map(e=>'Day '+e.day+' '+e.label).join(', '):''))}
+    evKey('curve-key');
     // tiers as a level road
     const tiers=$('tiers');let ti=0;while(ti+1<TIERS.length&&fTot>=TIERS[ti+1][0])ti++;
     const lab=['Start','100','1K','10K'],nx=TIERS[ti+1],from=TIERS[ti][0];
@@ -719,14 +740,15 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
       document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!sy.hidden)closeSy()});
       $('sy-s-img').addEventListener('error',e=>{e.target.closest('.sy-hero').classList.add('noimg')})}
     const openSy=(s,btn)=>{syLast=btn;const h=$('sy-s-img');h.closest('.sy-hero').classList.remove('noimg');h.src=cov(s);
-      $('sy-s-d').textContent=`Day ${s.day} · ${s.date}`;$('sy-s-h').textContent=s.title||`Day ${s.day}`;$('sy-s-p').textContent=s.text;
+      $('sy-s-d').textContent=`Day ${s.day} · ${s.date}`;$('sy-s-h').textContent=s.title||`Day ${s.day}`;{const w=$('sy-s-ev');w.innerHTML='';if(s.event&&s.event.label){const x=document.createElement('span');x.className='sy-ev';x.style.setProperty('--ev',{good:'#1f9d5c',twist:'#7c5cff'}[s.event.type]||'#e5484d');x.textContent=s.event.label;w.append(x)}}$('sy-s-p').textContent=s.text;
       $('sy-yt').href=s.video||'https://www.youtube.com/@joehasnodough';
       sy.hidden=false;requestAnimationFrame(()=>sy.classList.add('open'));sy.querySelector('.vt-plat').focus()};
     const relNext=V&&V.nextAt?new Date(V.nextAt).getTime():(V?new Date(V.closes).getTime()+7*36e5:0);
     D.story.forEach((s,i)=>{const last=i===D.story.length-1;
       if(s.upcoming){const c=el('div','sy-item next',`<span class="sy-node" aria-hidden="true"></span><div class="sy-c"><span class="sy-cover q" aria-hidden="true">?</span><span class="sy-txt"><span class="sy-d">DAY ${s.day} · ${esc(s.date)}</span><b>Coming next</b><small>${esc(s.text)}</small><span class="sy-soon" data-at="${relNext}"></span></span></div>`);st.append(c);return}
-      const b=el('button','sy-item',`<span class="sy-node${last||D.story[i+1]&&D.story[i+1].upcoming?' now':''}" aria-hidden="true"></span><span class="sy-c"><span class="sy-cover"><img src="${esc(cov(s))}" alt="" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="sy-play">${PLAY}</span></span><span class="sy-txt"><span class="sy-d">DAY ${s.day} · ${esc(s.date)}</span><b>${esc(s.title||'Day '+s.day)}</b><small>${esc(s.text)}</small></span><span class="vt-arrow" aria-hidden="true">→</span></span>`);
-      b.type='button';b.setAttribute('aria-label',`Day ${s.day}: watch`);b.addEventListener('click',()=>openSy(s,b));st.append(b)});
+      const ev=s.event&&s.event.label?s.event:null,evc=ev?' ev ev-'+(['good','twist'].includes(ev.type)?ev.type:'bad'):'',evb=ev?`<span class="sy-ev">${esc(ev.label)}</span>`:'';
+      const b=el('button','sy-item'+evc,`<span class="sy-node${last||D.story[i+1]&&D.story[i+1].upcoming?' now':''}" aria-hidden="true"></span><span class="sy-c"><span class="sy-cover"><img src="${esc(cov(s))}" alt="" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="sy-play">${PLAY}</span></span><span class="sy-txt"><span class="sy-d">DAY ${s.day} · ${esc(s.date)}</span>${evb}<b>${esc(s.title||'Day '+s.day)}</b><small>${esc(s.text)}</small></span><span class="vt-arrow" aria-hidden="true">→</span></span>`);
+      b.type='button';b.setAttribute('aria-label',`Day ${s.day}${ev?' ('+ev.label+')':''}: watch`);b.addEventListener('click',()=>openSy(s,b));st.append(b)});
     (function soon(){document.querySelectorAll('.sy-soon').forEach(x=>{const ms=+x.dataset.at-Date.now();
       x.textContent=ms>0?`Drops in ${Math.floor(ms/36e5)}h ${pad(Math.floor(ms%36e5/6e4))}m`:'Out now · reload';});setTimeout(soon,30000)})();
 
