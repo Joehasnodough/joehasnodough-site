@@ -582,6 +582,13 @@
             "title" : "Say no, bake cookies for Leo"
          }
       ],
-      "question" : "Mr. Novak: \"Never open the blue box.\" What does Joe do?"
+      "question" : "Mr. Novak: \"Never open the blue box.\" What does Joe do?",
+      "result" : {
+         "at" : "2026-11-25T18:37:00+01:00",
+         "likes" : 0,
+         "own" : true,
+         "platform" : "tiktok",
+         "text" : "take tha offer, open the box and make cookies"
+      }
    }
 }
