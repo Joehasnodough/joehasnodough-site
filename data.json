@@ -1,5 +1,5 @@
 {
-   "day" : 5,
+   "day" : 6,
    "followers" : {
       "instagram" : 5,
       "tiktok" : 26,
@@ -8,7 +8,7 @@
    "interim" : false,
    "likes" : {
       "instagram" : 45,
-      "tiktok" : 44,
+      "tiktok" : 45,
       "youtube" : 50
    },
    "rent" : {
@@ -58,6 +58,17 @@
       {
          "date" : "25 Nov",
          "day" : 6,
+         "event" : {
+            "label" : "FIRED",
+            "type" : "bad"
+         },
+         "text" : "You on TikTok said: take the deal, open the box, make cookies. Joe left cookies for Leo, then lifted the blue lid while Mr. Novak stepped out: one envelope, one word on it, LEO. The die rolled a 1: caught. \"I said always. Get out.\" Minutes later his boss texted: \"Don't come back. You're fired.\" No job, no income.",
+         "title" : "He opened the box. Then he got fired.",
+         "video" : "https://www.youtube.com/watch?v=MIQ7wjXPMj0"
+      },
+      {
+         "date" : "26 Nov",
+         "day" : 7,
          "text" : "Drops at 7 PM CET with the result of your vote.",
          "upcoming" : true
       }
@@ -559,36 +570,45 @@
          "n" : 1,
          "platform" : "instagram",
          "t" : "2026-11-25T18:31:00+01:00"
+      },
+      {
+         "amt" : 0.25,
+         "kind" : "like",
+         "n" : 1,
+         "platform" : "tiktok",
+         "t" : "2026-11-25T20:07:00+01:00"
+      },
+      {
+         "amt" : -12,
+         "kind" : "cost",
+         "sub" : "Day 6 · living costs",
+         "t" : "2026-11-25T19:00:00+01:00",
+         "title" : "Food"
+      },
+      {
+         "amt" : -8,
+         "kind" : "cost",
+         "sub" : "Day 6 · for Leo",
+         "t" : "2026-11-25T19:00:00+01:00",
+         "title" : "Cookies"
       }
    ],
-   "updated" : "2026-11-25T18:31:00+01:00",
+   "updated" : "2026-11-25T20:07:00+01:00",
    "vote" : {
-      "closes" : "2026-11-25T12:00:00+01:00",
-      "day" : 5,
+      "closes" : "2026-11-26T12:00:00+01:00",
+      "day" : 6,
       "options" : [
          {
             "key" : "A",
-            "note" : "+$80 on Saturday",
-            "title" : "Take the deal, the box stays shut"
+            "note" : "$80 · a die decides: 1–3 Novak says no",
+            "title" : "Tell Novak everything, beg for Saturday"
          },
          {
             "key" : "B",
-            "note" : "A die decides if Novak catches him",
-            "title" : "Take the deal and peek inside"
-         },
-         {
-            "key" : "C",
-            "note" : "$8 · try to make peace",
-            "title" : "Say no, bake cookies for Leo"
+            "note" : "+$120 · but no phone = no job calls",
+            "title" : "Sell his phone"
          }
       ],
-      "question" : "Mr. Novak: \"Never open the blue box.\" What does Joe do?",
-      "result" : {
-         "at" : "2026-11-25T18:37:00+01:00",
-         "likes" : 0,
-         "own" : true,
-         "platform" : "tiktok",
-         "text" : "take tha offer, open the box and make cookies"
-      }
+      "question" : "Caught and fired. Novak's $80 is all that's left. What does Joe do?"
    }
 }
