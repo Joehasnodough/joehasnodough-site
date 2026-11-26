@@ -2,13 +2,13 @@
    "day" : 6,
    "followers" : {
       "instagram" : 5,
-      "tiktok" : 39,
+      "tiktok" : 42,
       "youtube" : 20
    },
    "interim" : false,
    "likes" : {
       "instagram" : 48,
-      "tiktok" : 56,
+      "tiktok" : 58,
       "youtube" : 54
    },
    "rent" : {
@@ -650,12 +650,34 @@
          "platform" : "tiktok",
          "rate" : 5,
          "t" : "2026-11-26T07:59:00+01:00"
+      },
+      {
+         "amt" : 15,
+         "kind" : "follow",
+         "n" : 3,
+         "platform" : "tiktok",
+         "rate" : 5,
+         "t" : "2026-11-26T11:39:00+01:00"
+      },
+      {
+         "amt" : 0.5,
+         "kind" : "like",
+         "n" : 2,
+         "platform" : "tiktok",
+         "t" : "2026-11-26T11:39:00+01:00"
       }
    ],
-   "updated" : "2026-11-26T07:59:00+01:00",
+   "updated" : "2026-11-26T11:39:00+01:00",
    "vote" : {
       "closes" : "2026-11-26T12:00:00+01:00",
       "day" : 6,
+      "leader" : {
+         "at" : "2026-11-26T11:39:00+01:00",
+         "key" : "A",
+         "likes" : 1,
+         "platform" : "youtube",
+         "text" : "A! Confess, beg for Saturday! Please!"
+      },
       "options" : [
          {
             "key" : "A",
