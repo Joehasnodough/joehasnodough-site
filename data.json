@@ -1,5 +1,5 @@
 {
-   "day" : 6,
+   "day" : 7,
    "followers" : {
       "instagram" : 5,
       "tiktok" : 45,
@@ -69,6 +69,16 @@
       {
          "date" : "26 Nov",
          "day" : 7,
+         "event" : {
+            "label" : "ROLLED A 6",
+            "type" : "good"
+         },
+         "text" : "You voted A: Joe knocked on 4B and told Mr. Novak everything. The real die (1–3 = door stays shut) rolled a 6. \"You opened it. But you came back to tell me. Saturday stands.\" The $80 job is back on. Then Novak added: \"Don't tell Leo about the envelope. Not yet.\"",
+         "title" : "He confessed. Saturday stands."
+      },
+      {
+         "date" : "27 Nov",
+         "day" : 8,
          "text" : "Drops at 7 PM CET with the result of your vote.",
          "upcoming" : true
       }
@@ -709,31 +719,31 @@
          "n" : 2,
          "platform" : "tiktok",
          "t" : "2026-11-26T18:54:00+01:00"
+      },
+      {
+         "amt" : -12,
+         "kind" : "cost",
+         "sub" : "Day 7 · living costs",
+         "t" : "2026-11-26T21:45:00+01:00",
+         "title" : "Food"
       }
    ],
    "updated" : "2026-11-26T21:24:00+01:00",
    "vote" : {
-      "closes" : "2026-11-26T12:00:00+01:00",
-      "day" : 6,
-      "leader" : {
-         "at" : "2026-11-26T11:39:00+01:00",
-         "key" : "A",
-         "likes" : 1,
-         "platform" : "youtube",
-         "text" : "A! Confess, beg for Saturday! Please!"
-      },
+      "closes" : "2026-11-27T12:00:00+01:00",
+      "day" : 7,
       "options" : [
          {
             "key" : "A",
-            "note" : "$80 · a die decides: 1–3 Novak says no",
-            "title" : "Tell Novak everything, beg for Saturday"
+            "note" : "Novak might cancel Saturday",
+            "title" : "Tell Leo anyway"
          },
          {
             "key" : "B",
-            "note" : "+$120 · but no phone = no job calls",
-            "title" : "Sell his phone"
+            "note" : "+$80 · but Leo may find out on his own",
+            "title" : "Keep the secret until Saturday"
          }
       ],
-      "question" : "Caught and fired. Novak's $80 is all that's left. What does Joe do?"
+      "question" : "Novak: \"Don't tell Leo about the envelope. Not yet.\" What does Joe do?"
    }
 }
