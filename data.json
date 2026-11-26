@@ -2,14 +2,14 @@
    "day" : 6,
    "followers" : {
       "instagram" : 5,
-      "tiktok" : 26,
+      "tiktok" : 33,
       "youtube" : 20
    },
    "interim" : false,
    "likes" : {
-      "instagram" : 45,
-      "tiktok" : 45,
-      "youtube" : 50
+      "instagram" : 47,
+      "tiktok" : 53,
+      "youtube" : 54
    },
    "rent" : {
       "amount" : 900,
@@ -591,9 +591,38 @@
          "sub" : "Day 6 · for Leo",
          "t" : "2026-11-25T19:00:00+01:00",
          "title" : "Cookies"
+      },
+      {
+         "amt" : 1,
+         "kind" : "like",
+         "n" : 4,
+         "platform" : "youtube",
+         "t" : "2026-11-26T04:40:00+01:00"
+      },
+      {
+         "amt" : 35,
+         "kind" : "follow",
+         "n" : 7,
+         "platform" : "tiktok",
+         "rate" : 5,
+         "t" : "2026-11-26T04:40:00+01:00"
+      },
+      {
+         "amt" : 2,
+         "kind" : "like",
+         "n" : 8,
+         "platform" : "tiktok",
+         "t" : "2026-11-26T04:40:00+01:00"
+      },
+      {
+         "amt" : 0.5,
+         "kind" : "like",
+         "n" : 2,
+         "platform" : "instagram",
+         "t" : "2026-11-26T04:40:00+01:00"
       }
    ],
-   "updated" : "2026-11-25T20:07:00+01:00",
+   "updated" : "2026-11-26T04:40:00+01:00",
    "vote" : {
       "closes" : "2026-11-26T12:00:00+01:00",
       "day" : 6,
