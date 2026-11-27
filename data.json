@@ -780,6 +780,13 @@
             "title" : "Keep the secret until Saturday"
          }
       ],
-      "question" : "Novak: \"Don't tell Leo about the envelope. Not yet.\" What does Joe do?"
+      "question" : "Novak: \"Don't tell Leo about the envelope. Not yet.\" What does Joe do?",
+      "result" : {
+         "at" : "2026-11-27T17:01:00+01:00",
+         "key" : "A",
+         "likes" : 0,
+         "platform" : "youtube",
+         "text" : "No votes â so Joe chose A himself"
+      }
    }
 }
