@@ -7,7 +7,7 @@
    },
    "interim" : false,
    "likes" : {
-      "instagram" : 52,
+      "instagram" : 53,
       "tiktok" : 63,
       "youtube" : 57
    },
@@ -755,9 +755,16 @@
          "n" : 1,
          "platform" : "tiktok",
          "t" : "2026-11-27T08:25:00+01:00"
+      },
+      {
+         "amt" : 0.25,
+         "kind" : "like",
+         "n" : 1,
+         "platform" : "instagram",
+         "t" : "2026-11-27T15:57:00+01:00"
       }
    ],
-   "updated" : "2026-11-27T08:25:00+01:00",
+   "updated" : "2026-11-27T15:57:00+01:00",
    "vote" : {
       "closes" : "2026-11-27T12:00:00+01:00",
       "day" : 7,
