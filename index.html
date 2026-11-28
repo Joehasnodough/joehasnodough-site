@@ -770,7 +770,7 @@ h1,h2,.q{font-family:var(--text);letter-spacing:-.02em}
 
     // who's who: Figuren aus D.cast (Bild: website/cast/<id>.jpg)
     {const cw=$('cast');cw.innerHTML='';
-      (D.cast||[]).forEach(c=>{const d=el('div','cast-c',`<span class="cast-ph" style="--ring:${esc(c.ring||'#FFC94A')}"><img src="cast/${esc(c.id)}.jpg" alt="" loading="lazy"></span><span class="cast-n">${esc(c.name)}</span><span class="cast-r">${esc(c.role)}</span><span class="cast-d">SINCE DAY ${esc(c.since)}</span>`);
+      (D.cast||[]).forEach(c=>{const d=el('div','cast-c',`<span class="cast-ph" style="--ring:${esc(c.ring||'#FFC94A')}"><img src="cast/${esc(c.id)}.jpg?v=${esc(c.v||1)}" alt="" loading="lazy"></span><span class="cast-n">${esc(c.name)}</span><span class="cast-r">${esc(c.role)}</span><span class="cast-d">SINCE DAY ${esc(c.since)}</span>`);
         d.setAttribute('aria-label',`${c.name}: ${c.role}, since day ${c.since}`);cw.append(d)});
       if(D.castNext)cw.append(el('div','cast-next',`<span class="q" aria-hidden="true">?</span><span><b>${esc(D.castNext.title)}</b><small>${esc(D.castNext.text)}</small></span>`))}
 
