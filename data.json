@@ -1010,6 +1010,13 @@
             "title" : "Invest $100"
          }
       ],
-      "question" : "The letter is from Leo's grandpa. What does Joe do?"
+      "question" : "The letter is from Leo's grandpa. What does Joe do?",
+      "result" : {
+         "at" : "2026-11-28T12:08:00+01:00",
+         "likes" : 1,
+         "own" : true,
+         "platform" : "tiktok",
+         "text" : "start a music band"
+      }
    }
 }
