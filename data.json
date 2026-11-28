@@ -40,14 +40,14 @@
    "day" : 8,
    "followers" : {
       "instagram" : 11,
-      "tiktok" : 65,
-      "youtube" : 66
+      "tiktok" : 66,
+      "youtube" : 73
    },
    "interim" : false,
    "likes" : {
       "instagram" : 63,
-      "tiktok" : 95,
-      "youtube" : 196
+      "tiktok" : 96,
+      "youtube" : 199
    },
    "rent" : {
       "amount" : 900,
@@ -985,9 +985,39 @@
          "n" : 2,
          "platform" : "instagram",
          "t" : "2026-11-28T09:09:00+01:00"
+      },
+      {
+         "amt" : 70,
+         "kind" : "follow",
+         "n" : 7,
+         "platform" : "youtube",
+         "rate" : 10,
+         "t" : "2026-11-28T12:09:00+01:00"
+      },
+      {
+         "amt" : 0.75,
+         "kind" : "like",
+         "n" : 3,
+         "platform" : "youtube",
+         "t" : "2026-11-28T12:09:00+01:00"
+      },
+      {
+         "amt" : 10,
+         "kind" : "follow",
+         "n" : 1,
+         "platform" : "tiktok",
+         "rate" : 10,
+         "t" : "2026-11-28T12:09:00+01:00"
+      },
+      {
+         "amt" : 0.25,
+         "kind" : "like",
+         "n" : 1,
+         "platform" : "tiktok",
+         "t" : "2026-11-28T12:09:00+01:00"
       }
    ],
-   "updated" : "2026-11-28T09:09:00+01:00",
+   "updated" : "2026-11-28T12:09:00+01:00",
    "vote" : {
       "closes" : "2026-11-28T12:00:00+01:00",
       "day" : 8,
