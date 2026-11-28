@@ -1,15 +1,15 @@
 {
    "day" : 8,
    "followers" : {
-      "instagram" : 5,
-      "tiktok" : 46,
-      "youtube" : 27
+      "instagram" : 10,
+      "tiktok" : 62,
+      "youtube" : 34
    },
    "interim" : false,
    "likes" : {
-      "instagram" : 57,
-      "tiktok" : 73,
-      "youtube" : 71
+      "instagram" : 61,
+      "tiktok" : 93,
+      "youtube" : 106
    },
    "rent" : {
       "amount" : 900,
@@ -835,14 +835,59 @@
          "sub" : "Day 8 · living costs",
          "t" : "2026-11-27T19:00:00+01:00",
          "title" : "Food"
+      },
+      {
+         "amt" : 35,
+         "kind" : "follow",
+         "n" : 7,
+         "platform" : "youtube",
+         "rate" : 5,
+         "t" : "2026-11-28T05:20:00+01:00"
+      },
+      {
+         "amt" : 8.75,
+         "kind" : "like",
+         "n" : 35,
+         "platform" : "youtube",
+         "t" : "2026-11-28T05:20:00+01:00"
+      },
+      {
+         "amt" : 85,
+         "kind" : "follow",
+         "n" : 16,
+         "platform" : "tiktok",
+         "rate" : 5.3125,
+         "t" : "2026-11-28T05:20:00+01:00"
+      },
+      {
+         "amt" : 5,
+         "kind" : "like",
+         "n" : 20,
+         "platform" : "tiktok",
+         "t" : "2026-11-28T05:20:00+01:00"
+      },
+      {
+         "amt" : 50,
+         "kind" : "follow",
+         "n" : 5,
+         "platform" : "instagram",
+         "rate" : 10,
+         "t" : "2026-11-28T05:20:00+01:00"
+      },
+      {
+         "amt" : 1,
+         "kind" : "like",
+         "n" : 4,
+         "platform" : "instagram",
+         "t" : "2026-11-28T05:20:00+01:00"
       }
    ],
-   "updated" : "2026-11-27T19:28:00+01:00",
+   "updated" : "2026-11-28T05:20:00+01:00",
    "vote" : {
       "closes" : "2026-11-28T12:00:00+01:00",
       "day" : 8,
       "leader" : {
-         "at" : "2026-11-27T19:28:00+01:00",
+         "at" : "2026-11-28T05:20:00+01:00",
          "key" : "A",
          "likes" : 0,
          "platform" : "youtube",
