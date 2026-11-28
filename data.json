@@ -39,15 +39,15 @@
    },
    "day" : 8,
    "followers" : {
-      "instagram" : 11,
-      "tiktok" : 66,
+      "instagram" : 14,
+      "tiktok" : 68,
       "youtube" : 73
    },
    "interim" : false,
    "likes" : {
-      "instagram" : 63,
-      "tiktok" : 96,
-      "youtube" : 199
+      "instagram" : 71,
+      "tiktok" : 97,
+      "youtube" : 200
    },
    "rent" : {
       "amount" : 900,
@@ -1015,9 +1015,46 @@
          "n" : 1,
          "platform" : "tiktok",
          "t" : "2026-11-28T12:09:00+01:00"
+      },
+      {
+         "amt" : 0.25,
+         "kind" : "like",
+         "n" : 1,
+         "platform" : "youtube",
+         "t" : "2026-11-28T15:09:00+01:00"
+      },
+      {
+         "amt" : 20,
+         "kind" : "follow",
+         "n" : 2,
+         "platform" : "tiktok",
+         "rate" : 10,
+         "t" : "2026-11-28T15:09:00+01:00"
+      },
+      {
+         "amt" : 0.25,
+         "kind" : "like",
+         "n" : 1,
+         "platform" : "tiktok",
+         "t" : "2026-11-28T15:09:00+01:00"
+      },
+      {
+         "amt" : 30,
+         "kind" : "follow",
+         "n" : 3,
+         "platform" : "instagram",
+         "rate" : 10,
+         "t" : "2026-11-28T15:09:00+01:00"
+      },
+      {
+         "amt" : 2,
+         "kind" : "like",
+         "n" : 8,
+         "platform" : "instagram",
+         "t" : "2026-11-28T15:09:00+01:00"
       }
    ],
-   "updated" : "2026-11-28T12:09:00+01:00",
+   "updated" : "2026-11-28T15:09:00+01:00",
    "vote" : {
       "closes" : "2026-11-28T12:00:00+01:00",
       "day" : 8,
